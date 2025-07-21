@@ -217,7 +217,7 @@ We utilize high-grade raw materials and advanced machinery to deliver products t
   {
     id: 4,
     name: "Buttweld Pipe Fittings Manufacturers, Suppliers & Stockist in India",
-    productShortName: "Buttweld Pipe Fittings",
+    productShortName: "Pipe Fittings",
     description: `${companyName} is a reputed manufacturer, supplier, and stockist of premium-quality Buttweld Pipe Fittings in India. Known for their high tensile strength, corrosion resistance, and excellent finish, our fittings are widely demanded across industries. We manufacture, export, and supply Buttweld Fittings that conform to national and international quality standards, supported by advanced refining and fabrication equipment.
 
 We offer ASME B16.9 Buttweld Fittings such as Elbows, Tees, Crosses, Reducers, Nipples, and Couplings in various materials including Stainless Steel, Carbon Steel, and High Nickel Alloys.`,
