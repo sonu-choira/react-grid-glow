@@ -1,11 +1,14 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
+import { constantValue } from "./utils/constantValue";
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { theme } from "./theme";
-
+import Loader from "./components/loader/Loader";
+import { HelmetProvider } from 'react-helmet-async';
 theme.setThemeColors();
 
 const queryClient = new QueryClient();
@@ -19,14 +22,19 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   console.log("App rendering");
-
+  useEffect(() => {
+    document.title = constantValue.companyName;
+  }, []);
   return (
+    <HelmetProvider>
+
+
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/product/:id" element={<ProductPage />} />
@@ -39,6 +47,7 @@ const App = () => {
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 

@@ -12,11 +12,27 @@ import flanges from "../../assets/images/products/flanges.jpg";
 import forged from "../../assets/images/products/forged-fittings.jpg";
 import fasteners from "../../assets/images/products/fasteners.jpg";
 import valves from "../../assets/images/products/valves.jpg";
+import { slugify } from "../../utils/helperFunction";
 const products = [
+  {
+    id: 5,
+    name: "Pipe Fittings",
+    image: fittings,
+  },
   {
     id: 6,
     name: "Flanges",
     image: flanges,
+  },
+  {
+    id: 8,
+    name: "Fasteners",
+    image: fasteners,
+  },
+  {
+    id: 7,
+    name: "Forged Fittings",
+    image: forged,
   },
   {
     id: 2,
@@ -33,30 +49,17 @@ const products = [
     name: "Pipes & Tubes",
     image: pipes,
   },
-  {
-    id: 7,
-    name: "Forged Fittings",
-    image: forged,
-  },
+
   {
     id: 1,
     name: "Sheets, Plates & Coils",
     image: sheet,
   },
-  {
-    id: 8,
-    name: "Fasteners",
-    image: fasteners,
-  },
+
   {
     id: 3,
     name: "Round Bars & Rods",
     image: rods,
-  },
-  {
-    id: 5,
-    name: "Pipe Fittings",
-    image: fittings,
   },
 ];
 const ProductSection = () => {
@@ -85,7 +88,7 @@ const ProductSection = () => {
                 <img src={product.image} alt={product.name} />
                 <div className={styles.productOverlay}>
                   <Link
-                    to={`/product/${product.name.toLowerCase()}`}
+                    to={`/product/${slugify(product.name)}`}
                     className={styles.viewButton}
                   >
                     View Details

@@ -1,30 +1,24 @@
 import React from "react";
+import styles from "./ThirdPartyInspection.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const ThirdPartyInspection = ({ img }) => {
-  const imageUrls = [
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=80",
-  ];
-
+const ThirdPartyInspection = ({ img, title, customWidth }) => {
   return (
     <section
       style={{
         padding: "20px 0",
-        width: "60vw",
+        width: customWidth || "60vw",
         maxWidth: "100%",
         // borderRadius: "8px",
+        // border: "2px solid #ccc",
       }}
       className="third-party-section"
     >
+      <h2 className={styles.title}>{title}</h2>
       <Swiper
         modules={[Autoplay, FreeMode, Navigation, Pagination]}
         autoplay={{ delay: 2000 }}
@@ -45,7 +39,7 @@ const ThirdPartyInspection = ({ img }) => {
           1200: { slidesPerView: 5 },
         }}
       >
-        {img.map((url, index) => (
+        {img?.map((url, index) => (
           <SwiperSlide key={index}>
             <div
               style={{
@@ -63,7 +57,7 @@ const ThirdPartyInspection = ({ img }) => {
                 style={{
                   height: "100%",
                   width: "100%",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   borderRadius: "8px",
                 }}
               />

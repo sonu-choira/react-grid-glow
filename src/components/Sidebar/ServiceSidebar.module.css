@@ -6,7 +6,13 @@
   border: 1px solid #e0e0e0; /* light gray border */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06); /* soft shadow */
 }
-
+.sidebarTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary); /* dark blue-gray */
+  margin-bottom: 16px;
+  margin-left: 5%;
+}
 .serviceList {
   list-style: none;
   margin: 0;
@@ -37,9 +43,10 @@
 }
 
 .active {
-  color: var(--color-secondary); /* red */
+  color: var(--color-primary-accent); /* red */
   font-weight: 700;
   background-color: #fff5f5;
-  border-left: 3px solid var(--color-secondary);
+  border-left: 3px solid var(--color-primary-accent);
+  background-color: #f0f4ff; /* very soft blue */
   padding-left: 11px;
 }
